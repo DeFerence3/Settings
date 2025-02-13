@@ -79,9 +79,9 @@ object SettingsSaver {
     private fun putDarkMode(darkTheme: DarkTheme) = kv.encode(THEME_MODE,darkTheme.name)
 
     private fun getThemeType() = try {
-        kv.decodeString(THEME_TYPE)?.let { ThemeType.valueOf(it) } ?: ThemeType.Default
+        kv.decodeString(THEME_TYPE)?.let { ThemeType.valueOf(it) } ?: ThemeType.System
     } catch (e: Exception) {
-        ThemeType.Default
+        ThemeType.System
     }
 
     private fun getDarkMode() = try {
@@ -89,8 +89,6 @@ object SettingsSaver {
     } catch (e: Exception){
         DarkTheme.System
     }
-    fun getDeveloperMode() = kv.decodeBool(DEVELOPER_MODE)
-    fun getHighContrastMode() = kv.decodeBool(HIGH_CONTRAST)
 
     fun isADeveloper() = kv.decodeBool(IS_A_DEVELOPER)
     fun setDeveloper(isDeveloper: Boolean) {
