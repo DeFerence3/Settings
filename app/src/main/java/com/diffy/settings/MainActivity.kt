@@ -8,9 +8,7 @@ import com.diffy.settings.ui.core.LocalThemePreference
 import com.diffy.settings.ui.settings.SettingsScreen
 import com.diffy.settings.ui.theme.SettingsProvider
 import com.diffy.settings.ui.theme.SettingsTheme
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
